@@ -58,12 +58,13 @@ void setup() {
 
 void loop() {
   
-  Point foobar = getPointByIndex(9);
-  Serial.print("X: ");
-  Serial.println(foobar.x);
-  Serial.print("Y: ");
-  Serial.println(foobar.y);
-  setLed(foobar.x, foobar.y, CRGB::Green);
+  Point current = getPointByIndex(1);
+  setLed(current.x, current.y, CRGB::Black);
+  
+  current.y = current.y + 1;
+  setLed(current.x, current.y, CRGB::Red);
 
   FastLED.show();
+
+  delay(100);
 }
